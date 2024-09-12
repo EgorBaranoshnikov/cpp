@@ -51,6 +51,9 @@
         "xtr1common": "cpp",
         "xutility": "cpp",
         "fstream": "cpp",
-        "sstream": "cpp"
+        "sstream": "cpp",
+        "iomanip": "cpp",
+        "algorithm": "cpp",
+        "optional": "cpp"
     }
 }

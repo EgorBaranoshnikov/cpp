@@ -8,6 +8,14 @@
 
 using namespace std;
 
+bool IsCube(unsigned long long N)
+{
+    unsigned long long x = (unsigned long long)pow((double)N, 1. / 3.);
+    for (unsigned long long t = x - 1; t <= x + 1; t++)
+        if (t * t * t == N)
+            return true;
+    return false;
+}
 
 int main()
 {
@@ -19,19 +27,49 @@ int main()
     b = stoll(a);
     b = cbrt(b);
     b = b + 1;
-    b = pow(b, 3);
+    b = b * b * b;
+    if (!IsCube(b) && b <= 1000000000000000000)
+    {
+        b = b + 1;
+        b = stoll(a);
+        b = cbrt(b);
+        b = b + 1;
+        b = b * b * b;
+    }
+    if (!IsCube(b) && b <= 1000000000000000000)
+    {
+        b = b - 2;
+        b = stoll(a);
+        b = cbrt(b);
+        b = b + 1;
+        b = b * b * b;
+    }
     a = to_string(b);
-    b = b;
 
     while (b >= 1)
     {
         b = stoll(a);
         b = cbrt(b);
         b = b - 1;
-        b = pow(b, 3);
+        b = b * b * b;
+        if (!IsCube(b) && b <= 1000000000000000000)
+        {
+            b = b + 1;
+            b = stoll(a);
+            b = cbrt(b);
+            b = b + 1;
+            b = b * b * b;
+        }
+        if (!IsCube(b) && b <= 1000000000000000000)
+        {
+            b = b - 2;
+            b = stoll(a);
+            b = cbrt(b);
+            b = b + 1;
+            b = b * b * b;
+        }
+
         a = to_string(b);
-        b = b;
-        
 
         ch = a.length();
         kol_ch = ch;
