@@ -1,23 +1,36 @@
 #include <iostream>
-#include <fstream>
-#include <string>
-#include <cstring>
-#include <sstream>
-#include <cmath>
+#include <vector>
 
 using namespace std;
 
 int main()
 {
-    int b, max = 0, tek;
-    cin >> b;
-    for (int i = 0; i < b; i++)
+    int qq, a, b, c;
+    cin >> qq;
+    vector<string> power(qq);
+    for (int i = 0; i < qq; i++)
     {
-        cin >> tek;
-        if (tek > max)
+        cin >> a;
+        cin >> b;
+        cin >> c;
+        if (b > a && b < c)
         {
-           max = tek;
+            power[i] = "STAIR";
+        }
+        else
+        {
+            if (b > a && b > c)
+            {
+                power[i] = "PEAK";
+            }
+            else
+            {
+                power[i] = "NONE";
+            }
         }
     }
-    cout << max;
+    for (int i = 0; i < qq; i++)
+    {
+        cout << power[i] << endl;
+    }
 }
