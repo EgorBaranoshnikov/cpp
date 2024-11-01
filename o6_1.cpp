@@ -6,17 +6,40 @@ using namespace std;
 
 int main()
 {
-    int b = 1, kol = 0;
-    vector<int> s;
-    while (b != 0)
+    int a, kol1 = 0, kol2 = 0, b;
+    cin >> a;
+    vector<int> s(a);
+    vector<int> d(a);
+    for (int i = 0; i < a; i++)
     {
         cin >> b;
-        s.push_back(b);
-        kol++;
+        if (b % 2 == 0)
+        {
+            s[kol1] = b;
+            kol1++;
+        }
+        else
+        {
+            d[kol2] = b;
+            kol2++;
+        }
     }
-    cout << kol - 1 << endl;
-    for (int i = 0; i < kol - 1; kol--)
+    for (int i = 0; i < kol2; i++)
     {
-      cout << s[kol - 2] << " "; 
+        cout << d[i] << " ";
+    }
+    cout << endl;
+    for (int i = 0; i < kol1; i++)
+    {
+        cout << s[i] << " ";
+    }
+    cout << endl;
+    if (kol1 >= kol2)
+    {
+        cout << "YES";
+    }
+    else
+    {
+        cout << "NO";
     }
 }
