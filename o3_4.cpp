@@ -17,13 +17,13 @@ int main()
     }
     for (int i = 1; i <= a; i++)
     {
-        for (int j = a - 1; j > 0; j--)
+        for (int j = 0; j < w - i; j--)
         {
-            if (s[j] > s[j - 1])
+            if (s[j] < s[j - 1])
             {
                 swap(s[j], s[j - 1]);
             }
         }
     }
-    cout << s[w - 1];
+    cout << s[a - w];
 }
