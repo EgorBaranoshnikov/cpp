@@ -1,36 +1,40 @@
 #include <iostream>
 #include <vector>
+#include <algorithm>
 
 using namespace std;
 
 int main()
 {
-    int a, s, pr = 0, w;
+    int a, s, pr = 0;
     cin >> a;
-    vector<int> q[100];
+    vector<string> t(a);
     for (int i = 0; i < a; i++)
     {
         cin >> s;
-        for (int i = 0; i < s; i++)
+        vector<int> q(s);
+        for (int w = 0; w < s; w++)
         {
-            cin >> q[i];
+            cin >> q[w];
         }
-        for (int i = 1; i <= s; i++)
+        sort(q.begin(), q.end());
+        for (int e = 0; e < (s - 1); e++)
         {
-            for (int j = 1; j <= s - 1; j++)
+            if (q[e] == q[e + 1])
             {
-                if (q[j] == q[j - 1])
-                {
-                    cout << "NO";
-                    pr++;
-                    break;
-                }
+                t[i] = "NO";
+                pr++;
+                break;
             }
         }
-        if (pr > 0)
+        if (pr == 0)
         {
-            cout << "YES";
-            pr == 0;
+            t[i] = "YES";
         }
+        pr = 0;
+    }
+    for (int i = 0; i < a; i++)
+    {
+        cout << t[i] << endl;
     }
 }
