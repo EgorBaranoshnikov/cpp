@@ -6,6 +6,7 @@ using namespace std;
 string q(int a)
 {
     cout << a[size(a) - 1] << a[size(a)];
+    return;
 }
 
 int main()

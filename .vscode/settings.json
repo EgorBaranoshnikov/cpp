@@ -54,6 +54,8 @@
         "sstream": "cpp",
         "iomanip": "cpp",
         "algorithm": "cpp",
-        "optional": "cpp"
+        "optional": "cpp",
+        "list": "cpp",
+        "xtree": "cpp"
     }
 }
