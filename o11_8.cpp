@@ -7,13 +7,13 @@ using namespace std;
 
 int main()
 {
-    int a;
+    int otv = 0, pr;
     string b;
-    cin >> a;
-    for (int i = 0; i < a; i++)
+    cin >> b;
+    while (b.length() > 1)
     {
-        cin >> b;
-        sort(b.begin(), b.end());
-        cout << b << endl;
+        pr = stoi()
+        b = 
     }
+    
 }

@@ -1,17 +1,14 @@
 #include <iostream>
-#include <vector>
 
 using namespace std;
 
-string q(int a)
+void a()
 {
-    cout << a[size(a) - 1] << a[size(a)];
+    cout << "Hello world!";
     return;
 }
 
 int main()
 {
-    string a, c;
-    cin >> a;
-    c = q(a)
+    a();
 }

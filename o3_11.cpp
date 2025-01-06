@@ -1,14 +1,23 @@
 #include <iostream>
+#include <set>
+#include <map>
+#include <vector>
+#include <string>
 
 using namespace std;
 
-void a()
+string q(string a)
 {
-    cout << "Hello world!";
-    return;
+    string f;
+    f = a[a.size() - 1];
+    f.push_back(a[a.size() - 2]);
+    return(f);
 }
 
 int main()
 {
-    a();
+    string a, c;
+    cin >> a;
+    c = q(a);
+    cout << c[1] << " " << c[0];
 }
