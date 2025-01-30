@@ -14,5 +14,6 @@ int main()
         cin >> x;
         s.insert(x);
     }
-    cout << s.size();
+    for (auto i : s)
+        cout << i << " ";
 }
