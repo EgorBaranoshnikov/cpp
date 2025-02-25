@@ -5,8 +5,9 @@ using namespace std;
 
 int main()
 {
-    long long x, j;
-    cin >> x;
+    long long a, x, j, pr = 0;
+    cin >> a >> x;
+    x++;
     vector<long long> s(x, 1);
     s[0] = 0;
     s[1] = 0;
@@ -14,11 +15,19 @@ int main()
     {
         if (s[i] == 1)
         {
-            cout << i << " ";
+            if (i >= a)
+            {
+                cout << i << endl;
+                pr++;
+            }
             for (j = i * i; j <= x; j = j + i)
             {
-                s[j] = 0;  
+                s[j] = 0;
             }
         }
+    }
+    if (pr == 0)
+    {
+        cout << "Absent";
     }
 }
