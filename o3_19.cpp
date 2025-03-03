@@ -1,32 +1,33 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <algorithm>
 
 using namespace std;
 
 int main()
 {
-    int a;
-    float max = -1, pr, otv;
-    cin >> a;
-    vector<float> s1(a);
-    vector<float> s2(a);
-    for (int i = 0; i < a; i++)
+    int a1, a2, b, c;
+    cin >> a1 >> a2;
+    vector<int> s1(a1);
+    vector<int> s2(a1);
+    for (int i = 0; i < a1; i++)
     {
         cin >> s1[i];
     }
-    for (int i = 0; i < a; i++)
+    s2 = s1;
+    for (int i = 0; i < a2; i++)
     {
-        cin >> s2[i];
-    }
-    for (int i = 0; i < a; i++)
-    {
-        pr = s1[i] * (s2[i] / 100);
-        if (max < pr)
+        cin >> b >> c;
+        if (b == 1)
         {
-            max = pr;
-            otv = i;
+            s1[c - 1] = 1 - s1[c - 1];
+            s2 = s1;
+        }
+        if (b == 2)
+        {
+            sort(s2.begin(), s2.end());
+            cout << s2[a1 - c] << endl;
         }
     }
-    cout << otv + 1;
 }
