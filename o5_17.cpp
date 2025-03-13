@@ -9,7 +9,7 @@ int main()
     int k, otv;
     string a;
     cin >> k;
-    for (int i = 0; i < a; i++)
+    for (int i = 0; i < k; i++)
     {
        
     }
