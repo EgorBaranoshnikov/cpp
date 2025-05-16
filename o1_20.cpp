@@ -1,47 +1,38 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <algorithm>
+#include <cmath>
+#include <set>
 
 using namespace std;
 
 int main()
 {
-    long long n, k, otv = 0;
-    cin >> n >> k;
-    vector<long long> a(n);
-    for (int q = 0; q < n; ++q)
+    long long n, r;
+    cin >> n >> r;
+    vector<int> a(n);
+    for (int i = 0; i < n; ++i)
     {
-        cin >> a[q];
+        cin >> a[i];
     }
-    for (int q = n - 1; q >= 1; --q)
+    long long i = 0, j = 0, dist = 0, cnt = 0;
+    while (j != n - 1 || dist > r)
     {
-        a[q] = a[q] - a[q - 1];
-    }
-    for (int q = n - 1; q >= 1; --q)
-    {
-        a[q] = a[q] - a[0];
-    }
-    long long i = 0, j = 0, s = a[0];
-    bool go = true;
-    while (go)
-    {
-        if (s < k)
+        if (dist <= r)
         {
-            if (j == n - 1)
-            {
-                go = false;
-            }
-            else
-            {
-                j++;
-                s += a[j];
-            }
+            j++;
+            dist = a[j] - a[i];
         }
-        else if (s >= k)
+        else
         {
-            otv += (n - j);
-            s -= a[i++];
+            i++;
+            dist = a[j] - a[i];
+        }
+        if (dist > r)
+        {
+            cnt += n - j;
         }
     }
-    cout << otv;
+    cout << cnt;
 }
