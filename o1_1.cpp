@@ -10,9 +10,7 @@ int main()
     vector<string> power(qq);
     for (int i = 0; i < qq; i++)
     {
-        cin >> a;
-        cin >> b;
-        cin >> c;
+        cin >> a >> b >> c;
         if (b > a && b < c)
         {
             power[i] = "STAIR";
