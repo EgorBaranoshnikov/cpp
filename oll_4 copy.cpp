@@ -1,20 +1,22 @@
 #include <iostream>
-#include <string>
+#include <vector>
 
 using namespace std;
 
-int main()
-{
-    string a;
-    getline(cin, a);
-
-    for (char &c : a)
-    {
-        if (c == '!' || c == ',' || c == '.' || c == ':' || c == '?')
-        {
-            c = 'a';
-        }
+int main() {
+    int n, k, x;
+    cin >> n >> k >> x;
+    vector<int> q(n);
+    for (int i = 0; i < n; i++) {
+        cin >> q[i];
     }
-
-    cout << a;
+    q.insert(q.begin() + k, x);
+    
+    // Выводим результат
+    for (int i = 0; i < q.size(); i++) {
+        cout << q[i] << " ";
+    }
+    cout << endl;
+    
+    return 0;
 }

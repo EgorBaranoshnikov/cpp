@@ -67,6 +67,7 @@
         "stack": "cpp",
         "unordered_map": "cpp",
         "xhash": "cpp",
-        "climits": "cpp"
+        "climits": "cpp",
+        "bitset": "cpp"
     }
 }

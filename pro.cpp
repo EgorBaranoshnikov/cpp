@@ -1,24 +1,22 @@
 #include <iostream>
+#include <fstream>
+#include <cctype>
 #include <vector>
 
 using namespace std;
 
 int main()
 {
-    long long x, j;
-    cin >> x;
-    vector<long long> s(x, 1);
-    s[0] = 0;
-    s[1] = 0;
-    for (long long i = 2; i <= x; i++)
+    int a, b, c;
+    cin >> a >> b >> c;
+    vector<int> q(a);
+    for (int i = 0; i < a; i++)
     {
-        if (s[i] == 1)
-        {
-            cout << i << " ";
-            for (j = i * i; j <= x; j = j + i)
-            {
-                s[j] = 0;  
-            }
-        }
+        cin >> q[i];
+    }
+    q.insert(q.begin() + b, c);
+    for (int i = 0; i < a + 1; i++)
+    {
+        cout << q[i] << " ";
     }
 }
